@@ -1,0 +1,37 @@
+@model RentACarWebModel
+
+<div>
+    <label>Brand: <b>@Model.Car.Brand</b></label>
+
+    <label>Model: <b>@Model.Car.Model</b></label>
+
+    <label>Year: <b>@Model.Car.Year</b></label>
+
+    <label>Passengers Count: <b>@Model.Car.PassengersCount</b></label>
+
+    <label>Description: <b>@Model.Car.Description</b></label>
+
+    <label>Price Per Day: <b>@Model.Car.PricePerDay</b></label>
+
+    <label>Picture: <b>@Model.Car.Picture</b></label>
+
+    <label>Car Status: <b>@Model.Car.CarStatus</b></label>
+
+    <form action="RentACar" method="post">
+        <input value="@Model.Car.Id" asp-for="@Model.CarId" type="hidden" />
+        <input value="@Model.RenterId" asp-for="@Model.RenterId" type="hidden" />
+
+        <label asp-for="RentalDate">Rental date</label>
+        <input asp-for="RentalDate" />
+        <span asp-validation-for="RentalDate"></span>
+        <br />
+
+        <label asp-for="DueDate">Return date</label>
+        <input asp-for="DueDate" />
+        <span asp-validation-for="DueDate"></span>
+        <br />
+
+        <button type="submit" class="btn btn-outline-primary">Submit</button>
+    </form>
+
+</div>

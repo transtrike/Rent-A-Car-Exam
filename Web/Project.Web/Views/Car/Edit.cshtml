@@ -1,0 +1,45 @@
+@model CarWebModel
+
+<div>
+    <form method="post" asp-action="Edit">
+        <input value="@Model.Id" asp-for="Id" type="hidden" />
+
+        <br /><label asp-for="Brand">Brand*</label>
+        <input asp-for="Brand" placeholder="@Model.Brand" />
+        <span asp-validation-for="Brand"></span>
+        <br />
+
+        <label asp-for="Model">Model*</label>
+        <input asp-for="Model" />
+        <span asp-validation-for="Model"></span>
+        <br />
+
+        <label asp-for="Year">Year*</label>
+        <input asp-for="Year" />
+        <span asp-validation-for="Year"></span>
+        <br />
+
+        <label asp-for="PassengersCount">PassengersCount*</label>
+        <input asp-for="PassengersCount" />
+        <span asp-validation-for="PassengersCount"></span>
+        <br />
+
+        <label asp-for="Description">Description*</label>
+        <input asp-for="Description" />
+        <span asp-validation-for="Description"></span>
+        <br />
+
+        <label asp-for="PricePerDay">PricePerDay*</label>
+        <input asp-for="PricePerDay" />
+        <span asp-validation-for="PricePerDay"></span>
+        <br />
+
+        <label asp-for="Picture">Picture*</label>
+        <input asp-for="Picture" />
+        <span asp-validation-for="Picture"></span>
+        <br />
+
+        <p>* Required</p>
+        <button type="submit" class="btn btn-outline-primary">Submit</button>
+    </form>
+</div>

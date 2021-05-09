@@ -1,0 +1,15 @@
+Authorization
+
+- If a car isn't returned until the end date, the status becomes „просрочена“
+- View the request and confirm it before it's officially sent for processing
+- Look up all the requests he has made
+
+An Admin:
+- Has full CRUD over cars
+- Can change request's status 
+- Can filter requests by their status
+- Can edit other users
+
+Validations:
+- A car can't be rented for the same perioud that it has 
+already been rented(wut? wtf is that english, man)

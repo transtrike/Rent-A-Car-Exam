@@ -1,0 +1,37 @@
+@model CarWebModel
+
+@{ bool isAdmin = User.IsInRole(AppRole.Admin); }
+
+<div>
+    <label asp-for="Brand">Brand: <b>@Model.Brand</b></label>
+    <br />
+
+    <label asp-for="Model">Model: <b>@Model.Model</b></label>
+    <br />
+
+    <label asp-for="Year">Year: <b>@Model.Year</b></label>
+    <br />
+
+    <label asp-for="PassengersCount">Passengers Count: <b>@Model.PassengersCount</b></label>
+    <br />
+
+    <label asp-for="Description">Description: <b>@Model.Description</b></label>
+    <br />
+
+    <label asp-for="PricePerDay">Price Per Day: <b>@Model.PricePerDay</b></label>
+    <br />
+
+    <label asp-for="Picture">Picture: <b>@Model.Picture</b></label>
+    <br />
+
+    @if (Model.CarStatus != null)
+    {
+<label asp-for="CarStatus">Car Status: <b>@Model.CarStatus.Name</b></label>
+                <br /> } @*@if (isAdmin)
+                    {*@
+    <a class="btn btn-outline-primary" asp-action="RentACar" asp-route-carId="@Model.Id">Rent This Car</a>
+    <a class="btn btn-outline-primary" asp-action="Edit" asp-route-carId="@Model.Id">Edit</a>
+    <a class="btn btn-outline-primary alert-danger" asp-action="Delete" asp-route-carId="@Model.Id">Delete</a>
+    @*}*@
+
+</div>

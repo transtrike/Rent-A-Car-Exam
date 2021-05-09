@@ -1,0 +1,14 @@
+@model List<CarWebModel>
+
+<h1>See all available cars</h1>
+
+<div>
+    @foreach (var car in Model)
+    {
+<h5>Car Brand: @car.Brand</h5>
+                <p>Car Model: @car.Model</p>
+                                <p>Car Year: @car.Year</p>
+                                                <p>Car's Passengers Count: @car.PassengersCount</p>
+                                                                <a class="btn btn-outline-primary" asp-action="Details" asp-route-carId="@car.Id">Details</a>
+                                                                                <a class="btn btn-outline-primary" asp-action="RentACar" asp-route-carId="@car.Id">Rent This Car</a>}
+</div>
